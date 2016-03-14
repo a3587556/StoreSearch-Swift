@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Search View Controller-->
@@ -16,8 +17,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HCs-yI-UPG">
+                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="vSx-2W-eTw"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YEL-h1-3mc"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="App name, artist, song,album, e-book" translatesAutoresizingMaskIntoConstraints="NO" id="Dzj-bb-0qS">
+                                <rect key="frame" x="20" y="20" width="560" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fS9-JC-1EF"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dzj-bb-0qS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6QS-Oa-rtb"/>
+                            <constraint firstItem="HCs-yI-UPG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="APf-rI-sKq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HCs-yI-UPG" secondAttribute="trailing" id="Jlv-bz-fbx"/>
+                            <constraint firstItem="HCs-yI-UPG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="PHf-fc-2xL"/>
+                            <constraint firstItem="Dzj-bb-0qS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Uyb-7c-jgg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HCs-yI-UPG" secondAttribute="bottom" id="eOy-ZM-SMS"/>
+                            <constraint firstItem="Dzj-bb-0qS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zvk-GK-7VA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Dzj-bb-0qS" id="6aK-8L-yqN"/>
+                        <outlet property="tableView" destination="HCs-yI-UPG" id="Q2p-jE-9CC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
