@@ -38,27 +38,90 @@ class SearchViewController: UIViewController {
         static let nothingFoundCell = "NothingFoundCell"
     }
 
+    func urlWithSearchText(searchText: String) -> NSURL {
+        let escapedSearchText = searchText.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@", escapedSearchText)
+        let url = NSURL(string: urlString)
+        return url!
+    }
+    
+    func performStoreRequestWithURL(url: NSURL) -> String? {
+        do {
+            return try String(contentsOfURL: url, encoding: NSUTF8StringEncoding)
+        } catch {
+            print("Download Error: \(error)")
+            return nil
+        }
+    }
+    
+    func parseJSON(jsonString: String) -> [String: AnyObject]? {
+        guard let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding)
+            else { return nil }
+        
+        do {
+            return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String: AnyObject]
+        } catch {
+            print("JSON Error: \(error)")
+            return nil
+        }
+    }
+    
+    func parseDictionary(dictionary: [String: AnyObject]) {
+        guard let array = dictionary["results"] as? [AnyObject] else {
+            print("Expected 'results' array")
+            return
+        }
+        
+        for resultDict in array {
+            if let resultDict = resultDict as? [String: AnyObject] {
+                if let wrapperType = resultDict["wrapperType"] as? String,
+                    let kind = resultDict["kind"] as? String {
+                        print("wrapperType: \(wrapperType), kind: \(kind)")
+                }
+            }
+        }
+    }
+    
+    func showNetworkError() {
+        let alert = UIAlertController(
+            title: "Whoops...",
+            message: "There was an error reading from the iTunes Store. Please try again.",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(action)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
 
 }
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        
-        searchResults = [SearchResult]()
-        
-        hasSearched = true
-        
-        if searchBar.text! != "justin bieber" {
-            for i in 0...2 {
-                let searchResult = SearchResult()
-                searchResult.name = String(format: "Fake Result %d for", i)
-                searchResult.artistName = searchBar.text!
-                searchResults.append(searchResult)
+        if !searchBar.text!.isEmpty {
+            searchBar.resignFirstResponder()
+            
+            searchResults = [SearchResult]()
+            
+            hasSearched = true
+            
+            let url = urlWithSearchText(searchBar.text!)
+            print("URL: '\(url)'")
+            if let jsonString = performStoreRequestWithURL(url) {
+                print("Received JSON string '\(jsonString)'")
+                
+                if let dictionary = parseJSON(jsonString) {
+                    print("Dictionary \(dictionary)")
+                    
+                    tableView.reloadData()
+                    parseDictionary(dictionary)
+                    
+                    return
+                }
             }
+            
+            showNetworkError()
         }
-        
-        tableView.reloadData()
     }
     
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
