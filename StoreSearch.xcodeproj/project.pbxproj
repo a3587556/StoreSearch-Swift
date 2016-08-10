@@ -17,6 +17,8 @@
 		749099CA1C9C166C0017B3DB /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749099C91C9C166C0017B3DB /* NothingFoundCell.xib */; };
 		FE0DA27B1D59857900D66FC1 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0DA27A1D59857900D66FC1 /* UIImageView+DownloadImage.swift */; };
 		FE29C6511D50E7B00051A056 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE29C6501D50E7B00051A056 /* LoadingCell.xib */; };
+		FEBBE01B1D5ADECA00D79DB2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBBE01A1D5ADECA00D79DB2 /* DetailViewController.swift */; };
+		FEBBE01D1D5B0B4D00D79DB2 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBBE01C1D5B0B4D00D79DB2 /* DimmingPresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		749099C91C9C166C0017B3DB /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		FE0DA27A1D59857900D66FC1 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		FE29C6501D50E7B00051A056 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		FEBBE01A1D5ADECA00D79DB2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FEBBE01C1D5B0B4D00D79DB2 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				749099C91C9C166C0017B3DB /* NothingFoundCell.xib */,
 				FE29C6501D50E7B00051A056 /* LoadingCell.xib */,
 				FE0DA27A1D59857900D66FC1 /* UIImageView+DownloadImage.swift */,
+				FEBBE01A1D5ADECA00D79DB2 /* DetailViewController.swift */,
+				FEBBE01C1D5B0B4D00D79DB2 /* DimmingPresentationController.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -154,8 +160,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7431DF7E1C9116CE0049F5A6 /* SearchViewController.swift in Sources */,
+				FEBBE01D1D5B0B4D00D79DB2 /* DimmingPresentationController.swift in Sources */,
 				749099C41C970CD00017B3DB /* SearchResult.swift in Sources */,
 				749099C81C9AF29A0017B3DB /* SearchResultCell.swift in Sources */,
+				FEBBE01B1D5ADECA00D79DB2 /* DetailViewController.swift in Sources */,
 				7431DF7C1C9116CE0049F5A6 /* AppDelegate.swift in Sources */,
 				FE0DA27B1D59857900D66FC1 /* UIImageView+DownloadImage.swift in Sources */,
 			);
