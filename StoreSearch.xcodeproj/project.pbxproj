@@ -15,6 +15,7 @@
 		749099C61C9902150017B3DB /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749099C51C9902150017B3DB /* SearchResultCell.xib */; };
 		749099C81C9AF29A0017B3DB /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749099C71C9AF29A0017B3DB /* SearchResultCell.swift */; };
 		749099CA1C9C166C0017B3DB /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749099C91C9C166C0017B3DB /* NothingFoundCell.xib */; };
+		FE0DA27B1D59857900D66FC1 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0DA27A1D59857900D66FC1 /* UIImageView+DownloadImage.swift */; };
 		FE29C6511D50E7B00051A056 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE29C6501D50E7B00051A056 /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		749099C51C9902150017B3DB /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		749099C71C9AF29A0017B3DB /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		749099C91C9C166C0017B3DB /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		FE0DA27A1D59857900D66FC1 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		FE29C6501D50E7B00051A056 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 				749099C71C9AF29A0017B3DB /* SearchResultCell.swift */,
 				749099C91C9C166C0017B3DB /* NothingFoundCell.xib */,
 				FE29C6501D50E7B00051A056 /* LoadingCell.xib */,
+				FE0DA27A1D59857900D66FC1 /* UIImageView+DownloadImage.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				749099C41C970CD00017B3DB /* SearchResult.swift in Sources */,
 				749099C81C9AF29A0017B3DB /* SearchResultCell.swift in Sources */,
 				7431DF7C1C9116CE0049F5A6 /* AppDelegate.swift in Sources */,
+				FE0DA27B1D59857900D66FC1 /* UIImageView+DownloadImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

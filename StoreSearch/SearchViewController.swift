@@ -200,22 +200,6 @@ class SearchViewController: UIViewController {
         
         presentViewController(alert, animated: true, completion: nil)
     }
-
-    func kindForDisplay(kind: String) -> String {
-        switch kind {
-            case "album": return "Album"
-            case "audiobook": return "Audio Book"
-            case "book": return "Book"
-            case "ebook": return "E-Book"
-            case "feature-movie": return "Movie"
-            case "music-video": return "Music Video"
-            case "podcast": return "Podcast"
-            case "software": return "Software"
-            case "song": return "Song"
-            case "tv-episode": return "TV Episode"
-            default: return kind
-        }
-    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -327,14 +311,7 @@ extension SearchViewController: UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier(TableViewCellIdentifiers.searchResultCell, forIndexPath: indexPath) as! SearchResultCell
             let searchResult = searchResults[indexPath.row]
-            cell.nameLabel.text = searchResult.name
-            //cell.artistNameLabel.text = searchResult.artistName
-            if searchResult.artistName.isEmpty {
-                cell.artistNameLabel.text = "Unknown"
-            } else {
-                cell.artistNameLabel.text = String(format: "%@ (%@)", searchResult.artistName, kindForDisplay(searchResult.kind))
-            }
-                
+            cell.configureForSearchResult(searchResult)
             return cell
         }
     }

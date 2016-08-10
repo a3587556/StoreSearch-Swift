@@ -11,19 +11,27 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SearchResultCell.prepareForReuse() -&gt; ():SearchResultCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nameLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SearchViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:SearchViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "indexPath.row">
+               value = "indexPath">
             </PersistentString>
             <PersistentString
                value = "searchResults">
             </PersistentString>
             <PersistentString
-               value = "searchResults.count">
+               value = "indexPath.row">
             </PersistentString>
             <PersistentString
-               value = "indexPath">
+               value = "searchResults.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
